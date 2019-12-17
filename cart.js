@@ -4,8 +4,13 @@ const user = {
     cart: [],
     purchases: [],
     addToCart: function(item) {
-      item.price *= 1.03; // changing the price not only within array Cart, but for the general variable as well - not ideal
-      user.cart.push(item);
+      function clone (obj) {
+        return {...obj};
+      }
+      const itemInCart = clone(item);
+      itemInCart.price *= 1.03; 
+      user.cart.push(itemInCart);
+      console.log(`${item.name} has been added into your shopping cart.`)
     },
     buyItem: function(item) {
       for (var i = 0; i < this.cart.length; i++) {
@@ -13,13 +18,16 @@ const user = {
         this.cart.splice(i, 1);
         i--; //decrement i IF we remove an item
       }
+      console.log(`You have now purchased new ${item.name}`)
     },
     emptyCart: function() {
       for (var i = 0; i < this.cart.length; i++) {
         this.cart.splice(i, 1);
         i--;
       }
+      console.log(`You have now removed ${item.name} from your shopping cart`)
     }
+
   };
   
   const item1 = {
