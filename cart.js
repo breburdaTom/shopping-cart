@@ -29,7 +29,7 @@ const user = {
     }
 
   };
-  
+  //// items to buy
   const item1 = {
     name: "Phone",
     price: 100
@@ -42,7 +42,7 @@ const user = {
   
   //Implement a cart feature:
   // 1. Add items to cart. DONE
-  // 2. Add 3% tax to item in cart DONE (not very well)
+  // 2. Add 3% tax to item in cart DONE
   // 3. Buy item: cart --> purchases DONE
   // 4. Empty cart DONE
   
