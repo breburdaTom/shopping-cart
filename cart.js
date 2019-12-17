@@ -4,6 +4,7 @@ const user = {
     cart: [],
     purchases: [],
     addToCart: function(item) {
+      item.price *= 1.03; // changing the price not only within array Cart, but for the general variable as well - not ideal
       user.cart.push(item);
     },
     buyItem: function(item) {
@@ -33,7 +34,7 @@ const user = {
   
   //Implement a cart feature:
   // 1. Add items to cart. DONE
-  // 2. Add 3% tax to item in cart
+  // 2. Add 3% tax to item in cart DONE (not very well)
   // 3. Buy item: cart --> purchases DONE
   // 4. Empty cart DONE
   
